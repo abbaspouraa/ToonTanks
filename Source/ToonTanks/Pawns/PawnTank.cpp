@@ -13,15 +13,6 @@ APawnTank::APawnTank()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera -> SetupAttachment(SpringArm);
-
-	FVector MoveDirecton;
-	FQuat RotationDirectin;
-
-	void CalculateMoveInput(float Value);
-	void CalculateRotationInput(float Value);
-
-	void Move();
-	void Rotate();
 }
 
 // Called when the game starts or when spawned
@@ -43,25 +34,27 @@ void APawnTank::Tick(float DeltaTime)
 void APawnTank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	PlayerInputComponent -> BindAxis("MoveForward", this, &APawnTank::CalculateMoveInput);
 
 }
 
-void CalculateMoveInput(float Value) 
+
+void APawnTank::CalculateMoveInput(float Value) 
 {
 	
 }
 
-void CalculateRotationInput(float Value) 
+void APawnTank::CalculateRotationInput(float Value) 
 {
 	
 }
 
-void Move() 
+void APawnTank::Move() 
 {
 	
 }
 
-void Rotate() 
+void APawnTank::Rotate() 
 {
 	
 }

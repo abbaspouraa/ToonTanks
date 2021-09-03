@@ -35,4 +35,15 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+private:
+
+	FVector MoveDirecton;
+	FQuat RotationDirectin;
+
+	void CalculateMoveInput(float Value);
+	void CalculateRotationInput(float Value);
+
+	void Move();
+	void Rotate();
 };
