@@ -41,6 +41,9 @@ private:
 	FVector MoveDirecton;
 	FQuat RotationDirectin;
 
+	float MoveSpeed = 100.f;
+	float RotationSpeed = 100.f;
+
 	void CalculateMoveInput(float Value);
 	void CalculateRotationInput(float Value);
 
