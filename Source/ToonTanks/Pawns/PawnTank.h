@@ -5,9 +5,11 @@
 #include "CoreMinimal.h"
 #include "BasePawn.h"
 #include "PawnTank.generated.h"
+// #include "GameFramework/PlayerController.h"
 
 class USpringArmComponent;
 class UCameraComponent;
+class APlayerController;
 
 
 UCLASS()
@@ -29,6 +31,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	virtual void HandleDestruction() override;
+
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components", meta = (AllowPrivateAccess = "true"))
@@ -43,6 +47,8 @@ private:
 	float MoveSpeed = 100.f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement", meta = (AllowPrivateAccess = "true"))
 	float RotationSpeed = 100.f;
+
+	APlayerController* PlayerControllerRef;
 
 	void CalculateMoveInput(float Value);
 	void CalculateRotationInput(float Value);
