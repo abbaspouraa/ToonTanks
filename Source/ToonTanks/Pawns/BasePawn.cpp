@@ -45,7 +45,7 @@ void ABasePawn::Fire()
 		AProjectileBase* TempProjectile = GetWorld() -> SpawnActor<AProjectileBase>(ProjectileBaseClass, SpawnLocation, SpawnRotation);
 		TempProjectile -> SetOwner(this);
 	}
-	UE_LOG(LogTemp, Warning, TEXT("Fire Condirion Checked."));
+	// UE_LOG(LogTemp, Warning, TEXT("Fire Condirion Checked."));
 }
 
 void ABasePawn::HandleDestruction() 
