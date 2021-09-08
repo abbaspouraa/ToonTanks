@@ -27,7 +27,7 @@ void APawnTank::BeginPlay()
 void APawnTank::HandleDestruction() 
 {
 	Super::HandleDestruction();
-
+	UE_LOG(LogTemp, Warning, TEXT("The tank died"));
 	// Hide Player - Create a new function to handle this.
 }
 

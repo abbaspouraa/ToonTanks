@@ -6,9 +6,10 @@
 #include "GameFramework/GameModeBase.h"
 #include "TankGameModeBase.generated.h"
 
-/**
- * 
- */
+
+class APawnTurret;
+class APawnTank;
+
 UCLASS()
 class TOONTANKS_API ATankGameModeBase : public AGameModeBase
 {
@@ -20,6 +21,9 @@ public:
 
 protected:
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Game Loop")
+	int32 StartDelay = 2;
+
 	virtual void BeginPlay() override;
 	UFUNCTION(BlueprintImplementableEvent)
 	void GameStart();
@@ -27,6 +31,9 @@ protected:
 	void GameOver(bool PlayerWon);
 
 private:
+
+	APawnTank *PlayerTank;
+	int32 TargetTurrts = 0;
 
 	void HandleGameStart();
 	void HandleGameOver(bool PlayerWon);

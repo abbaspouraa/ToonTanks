@@ -21,7 +21,7 @@ void APawnTurret::HandleDestruction()
 {
 	Super::HandleDestruction();
 
-	Destroy();
+	UE_LOG(LogTemp, Warning, TEXT("A turret died."));
 }
 
 

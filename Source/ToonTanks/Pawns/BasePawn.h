@@ -33,6 +33,9 @@ private:
 	TSubclassOf<AProjectileBase> ProjectileBaseClass;
 
 public:
+
+	virtual void HandleDestruction();
+
 	// Sets default values for this pawn's properties
 	ABasePawn();
 
@@ -41,5 +44,4 @@ protected:
 
 	void Fire();
 
-	virtual void HandleDestruction();
 };
