@@ -51,7 +51,6 @@ void ABasePawn::Fire()
 void ABasePawn::HandleDestruction() 
 {
 	// --- Universal Functionality ---
-	Destroy();
 	// Play death effects particle, sound and camera shake.
 
 	// --- Then do child overrides ---
