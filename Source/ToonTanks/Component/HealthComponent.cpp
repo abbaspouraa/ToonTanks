@@ -4,6 +4,7 @@
 #include "HealthComponent.h"
 #include "ToonTanks/GameModes/TankGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
+#include <string>
 
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
@@ -34,6 +35,7 @@ void UHealthComponent::TakeDamage(AActor* DamagedActor, float Damage, const UDam
 	}
 
 	Health = FMath::Clamp(Health - Damage, 0.f, DefaultHealth);
+	UE_LOG(LogTemp, Warning, TEXT("%f of health for %s is remaining."), Health, *DamagedActor -> GetName())//, DamagedActor -> GetName());
 
 	if(Health <= 0)
 	{
